@@ -21,6 +21,3 @@ async def greet_user():
     else:
         logger.info(f"Hello, {user_input.name}!")
         
-
-if __name__=="__main__":
-    greet_user()

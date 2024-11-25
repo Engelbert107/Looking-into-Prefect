@@ -12,5 +12,3 @@ def greet_user():
 
 # In this example, the flow run pauses until a user clicks the Resume button in the Prefect UI, enters 
 # a name, and submits the form.
-if __name__=="__main__":
-    greet_user()
