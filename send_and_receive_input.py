@@ -74,19 +74,19 @@ async def sender():
 
 
 """ 
-Start a flow runner in one terminal with the following command: 
+1. Start a flow runner in one terminal with the following command: 
 
-python send_and_receive_input.py greeter
+python3 send_and_receive_input.py greeter
 
-Then start the greeter process in another terminal:
+2. Then start the greeter process in another terminal:
 
-python send_and_receive_input.py sender
+python3 send_and_receive_input.py sender
 
 """
 # Run this file: python send_and_receive_input.py greeter
 
 if __name__ == "__main__":
-    if sys.argv[1] == "greeter":
+    if sys.argv[0] == "greeter":
         asyncio.run(greeter.serve(name="send-receive"))
-    elif sys.argv[1] == "sender":
+    elif sys.argv[0] == "sender":
         asyncio.run(sender())
