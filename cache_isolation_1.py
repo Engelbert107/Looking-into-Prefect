@@ -15,7 +15,9 @@ def my_task_version_2(x: int):
     print("my_task_version_2 running")
     return x + 43
 
-# Here both tasks will execute in parallel and perform work despite both tasks using the same cache key.
+""" 
+Here both tasks will execute in parallel and perform work despite both tasks using the same cache key.
+"""
 
 if __name__ == "__main__":
     thread_1 = threading.Thread(target=my_task_version_1, args=(1,))
