@@ -39,7 +39,7 @@ def pipeline(contents: str):
 """ 
 If you run this flow pipeline(contents="hello world!") it will fail. 
 Importantly, after the flow has exited, there is no "side-effect.txt" file 
-in your working directory. This is because the write_file task’s on_rollback 
+in your working directory. This is because the write_file task's on_rollback 
 hook was executed due to the transaction failing.
 """
 
