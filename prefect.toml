@@ -1,0 +1,11 @@
+# Set more detailed logging while developing
+# You can keep a prefect.toml file in your project directory and the declared settings will be 
+# automatically applied when running prefect in that directory. We recommend committing this file to 
+# your code repositories to ensure consistency across environments.
+
+[logging]
+level = "DEBUG"
+
+[ui]
+api_url = "https://prefect-server.example.com/api"
+
