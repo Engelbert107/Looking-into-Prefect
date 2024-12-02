@@ -1,0 +1,5 @@
+# The advantage of declaring settings in a pyproject.toml file is that it allows 
+# you to keep all your dependencies and settings for all your tools in one place. 
+
+[tool.prefect]
+logging.level = "DEBUG"
