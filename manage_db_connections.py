@@ -1,5 +1,5 @@
 from prefect import flow, task, concurrency
-from myproject import db
+from myproject import db # type: ignore
 
 @task
 def database_query(query):
