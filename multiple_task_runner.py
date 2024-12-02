@@ -1,6 +1,6 @@
 from prefect import flow, task
 from prefect.task_runners import ThreadPoolTaskRunner
-from prefect_dask.task_runners import DaskTaskRunner
+from prefect_dask.task_runners import DaskTaskRunner # type: ignore
 import time
 
 
