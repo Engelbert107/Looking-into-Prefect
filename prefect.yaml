@@ -1,0 +1,45 @@
+# relevant section of the file:
+pull:
+    - prefect.deployments.steps.git_clone:
+        repository: https://gitlab.com/org/my-repo.git
+        # Uncomment the following line if using a credentials block
+        # credentials: "{{ prefect.blocks.github-credentials.my-github-credentials-block }}"
+        # Uncomment the following line if using a Secret block
+        # access_token: "{{ prefect.blocks.secret.my-block-name }}"
+
+
+# build section allows you to manage and build docker images
+build:
+- prefect_docker.deployments.steps.build_docker_image:
+    requires: prefect-docker>=0.3.1
+    id: build-image
+    dockerfile: auto
+    image_name: my_username/default
+    tag: latest
+
+# push section allows you to manage if and how this project is uploaded to remote locations
+push: null
+
+# pull section allows you to provide instructions for cloning this project in remote locations
+pull:
+- prefect.deployments.steps.set_working_directory:
+    directory: /opt/prefect/my_directory
+
+
+# the deployments section allows you to provide configuration for deploying flows
+deployments:
+- name: my-docker-deployment
+  version: null
+  tags: []
+  concurrency_limit: null
+  description: null
+  entrypoint: my_file.py:my_flow
+  parameters: {}
+  work_pool:
+    name: my_pool
+    work_queue_name: null
+    job_variables:
+      image: '{{ build-image.image }}'
+  enforce_parameter_schema: true
+  schedules: []
+
