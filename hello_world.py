@@ -10,15 +10,7 @@ def hello_world(name: str = "world", goodbye: bool = False):
 
 
 if __name__ == "__main__":
-    # creates a deployment and stays running to monitor for work instructions 
-    # generated on the server
-
-    hello_world.serve(
-        name="my-first-deployment",
-        tags=["onboarding", "testing", "tutorial"],
-        description="Creates a deployment and stays running to monitor for work instructions generated on the server.",
-        version="tutorial/deployments",
-        parameters={"goodbye": True},
-        pause_on_shutdown=False,
-        interval=60
-    )
+    hello_world.serve(name="my-first-deployment",
+                      tags=["onboarding"],
+                      parameters={"goodbye": True},
+                      interval=60)
