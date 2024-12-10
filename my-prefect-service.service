@@ -1,0 +1,11 @@
+[Unit]
+Description=Prefect worker
+
+[Service]
+User=prefect
+WorkingDirectory=/home
+ExecStart=prefect worker start --pool YOUR_WORK_POOL_NAME
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
