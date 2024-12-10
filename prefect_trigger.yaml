@@ -1,0 +1,15 @@
+# Define Trigger in prefect.yaml
+deployments:
+  - name: my-deployment
+    entrypoint: path/to/flow.py:decorated_fn
+    work_pool:
+      name: my-work-pool
+    triggers:
+      - type: event
+        enabled: true
+        match:
+          prefect.resource.id: my.external.resource
+        expect:
+          - external.resource.pinged
+        parameters:
+          param_1: "{{ event }}"
